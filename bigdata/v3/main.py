@@ -5,7 +5,6 @@ from myquestionscore import get_question_scores
 from myprint import print_question_scores
 from myprint import print_score_board
 
-
 def print_hello_world():
     print('hello world!')
 
