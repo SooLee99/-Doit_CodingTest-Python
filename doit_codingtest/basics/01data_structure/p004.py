@@ -8,7 +8,7 @@
 # 표에 채워져 잇는 수는 1,000qhek
 
 ## <출력>
-# 1번째 줄에 새로운 평균을 출력한다. 실제제 정답과 출력 값의 절대 오차 또는 상대 오차가 10 -2승 이하이면 정답이다.
+# 1번째 줄에 새로운 평균을 출력한다. 실제 정답과 출력 값의 절대 오차 또는 상대 오차가 10 -2승 이하이면 정답이다.
 
 import sys
 input = sys.stdin.readline
@@ -16,16 +16,14 @@ input = sys.stdin.readline
 ## 1번째 줄 입력. (n : 리스트 크기, m : 질문의 개수)
 n, m = map(int, input().split())
 
-## 2개의 리스트 제작. (A : 원본 리스트, D : 합 배열 리스트)
+## 원본 리스트 제작.
 A = [[0] * (n + 1)]
-D = [[0] * (n + 1) for _ in range(n + 1)]
-
-## 리스트 채우기.
 for i in range(n):
     A_row = [0] + [int(x) for x in input().split()]
     A.append(A_row)
 
-## 합배열 채우기.
+## 합배열 리스트 제작.
+D = [[0] * (n + 1) for _ in range(n + 1)]
 for i in range(1, n + 1):
     for j in range(1, n + 1):
         D[i][j] = D[i][j-1] + D[i-1][j] - D[i-1][j-1] + A[i][j]
