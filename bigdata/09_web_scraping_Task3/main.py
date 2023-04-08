@@ -3,7 +3,7 @@ import requests
 from bs4 import BeautifulSoup
 
 res = requests.get("https://finance.naver.com/sise/sise_quant.naver")
-soup = BeautifulSoup(res.content, 'html.parser',from_encoding('euc-kr'))
+soup = BeautifulSoup(res.content.decode('euc-kr','replace'), 'html.parser')
 
 for title in soup.find_all('a',class_='tltle'):
     print(title.string)
