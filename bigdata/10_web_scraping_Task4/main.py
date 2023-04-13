@@ -1,13 +1,10 @@
 # 문제4 : 할리스 전국 매장 정보 추출.
-import requests
-from bs4 import BeautifulSoup
+from ws_basic_hollys import scrape_hollys_stores_fixed_method
+from ws_basic_hollys import scrape_hollys_stores_dynimic_method1
+from ws_basic_hollys import scrape_hollys_stores_dynimic_method2
+from ws_basic_hollys import scrape_hollys_stores_dynimic_method3
 
-no = 1
-while(True):
-    res = requests.get("https://www.hollys.co.kr/store/korea/korStore2.do?pageNo="+str(no))
-    soup = BeautifulSoup(res.content, 'html.parser')
-
-    for tr in soup.select_one('tbody').select('tr'):
-        for td in len(tr.select('td')):
-            print(tr.select('td')[td].text)
-    no += 1
+# scrape_hollys_stores_fixed_method(53)
+# scrape_hollys_stores_dynimic_method1()
+scrape_hollys_stores_dynimic_method2()
+# scrape_hollys_stores_dynimic_method3()
