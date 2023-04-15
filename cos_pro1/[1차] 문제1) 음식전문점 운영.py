@@ -42,7 +42,7 @@
 
 from abc import *
 
-class DeliveryStore(metaclass=ABCMeta):
+class DeliveryStore(metaclass=ABCMeta):     # (metaclass=ABCMeta) <= 인터페이스 역활을 수행함.
     @abstractmethod
     def set_order_list(self, order_list):
         pass
@@ -89,7 +89,6 @@ class PizzaStore(DeliveryStore):
                     # 금액 누적
         return total_price
         # 누적된 금액 리턴
-
 
 def solution(order_list):
     delivery_store = PizzaStore()
