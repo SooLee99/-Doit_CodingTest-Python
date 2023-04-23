@@ -42,6 +42,7 @@ def solution(recordA, recordB):
 			if cnt > 0: cnt = cnt - 1 # recordA가 진 경우(패배), 1점 실점 => 단, 최소 0점 이상
 	return cnt
 
+
 recordA = [2,0,0,0,0,0,1,1,0,0]
 recordB = [0,0,0,0,2,2,0,2,2,2]
 ret = solution(recordA, recordB)
