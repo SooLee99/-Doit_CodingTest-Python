@@ -39,8 +39,10 @@ def solution(pos):
         # 순차적으로 row, col 값 누적함으로써 이동 범위 파악
         nr = r + dr[i]
         nc = c + dc[i]
-        if nr >= 0 and nr < 8 and nc >= 0 and nc < 8: answer += 1
-    # 이동 범위(1~8,A~H)를 초과하지 않은 위치에서만 answer 증가
+
+        # 이동 범위(1~8,A~H)를 초과하지 않은 위치에서만 answer 증가
+        if nr >= 0 and nr < 8 and nc >= 0 and nc < 8:
+            answer += 1
     return answer
 
 
