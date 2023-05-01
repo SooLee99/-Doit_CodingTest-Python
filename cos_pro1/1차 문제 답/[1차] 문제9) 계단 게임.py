@@ -39,7 +39,8 @@ def solution(recordA, recordB):
 		elif recordA[i] == func(recordB[i]): # recordA가 이긴 경우(승리)
 			cnt = cnt + 3 # 3점 누적
 		else:
-			if cnt > 0: cnt = cnt - 1 # recordA가 진 경우(패배), 1점 실점 => 단, 최소 0점 이상
+			if cnt > 0:
+				cnt = cnt - 1 # recordA가 진 경우(패배), 1점 실점 => 단, 최소 0점 이상
 	return cnt
 
 
