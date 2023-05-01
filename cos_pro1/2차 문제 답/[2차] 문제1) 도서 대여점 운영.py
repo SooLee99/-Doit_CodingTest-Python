@@ -71,3 +71,9 @@ def solution(book_types, day):
 	for book in books: # books의 요소들을 순회
 		total_price += book.get_rental_price(day) # 대여비 계산 후 총합 누적
 	return total_price
+
+
+book_types = ["comic", "comic", "novel"]
+day = 4
+ret = solution(book_types, day)
+print("solution 함수의 반환 값은", ret, "입니다.")
