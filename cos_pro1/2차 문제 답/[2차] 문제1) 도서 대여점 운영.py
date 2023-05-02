@@ -39,20 +39,20 @@
 
 from abc import *
 
-class Book(metaclass=ABCMeta): # 추상 클래스 선언
+class Book(metaclass=ABCMeta): 			# 추상 클래스 선언
 	@abstractmethod # 추상 메서드 선언
 	def get_rental_price(self, day):
 		pass
 
-class ComicBook(Book): # 추상 클래스를 불러와 구현
+class ComicBook(Book): 								# 추상 클래스를 불러와 구현
 	def get_rental_price(self, day):
-		cost = 500 # 비용
-		day -= 2 # 대여일자(2일)
-		if day > 0: # 대여일자 초과 시
-			cost += day * 200 # 일당 200원 추가
+		cost = 500 									# 비용
+		day -= 2 									# 대여일자(2일)
+		if day > 0: 								# 대여일자 초과 시
+			cost += day * 200 						# 일당 200원 추가
 		return cost
 
-class Novel(Book): # ComicBook과 동일한 원리로 구현
+class Novel(Book): 									# ComicBook과 동일한 원리로 구현
 	def get_rental_price(self, day):
 		cost = 1000
 		day -= 3
@@ -62,14 +62,14 @@ class Novel(Book): # ComicBook과 동일한 원리로 구현
 
 def solution(book_types, day):
 	books = []
-	for types in book_types: # 책의 종류를 순회
-		if types == "comic": # 책의 종류가 comic일 경우
-			books.append(ComicBook()) # comicBook 클래스를 이용하여 객체 생성
-		elif types == "novel": # 책의 종류가 novel일 경우
-			books.append(Novel()) # novel 클래스를 이용하여 객체 생성
+	for types in book_types: 						# 책의 종류를 순회
+		if types == "comic": 						# 책의 종류가 comic일 경우
+			books.append(ComicBook()) 				# comicBook 클래스를 이용하여 객체 생성
+		elif types == "novel": 						# 책의 종류가 novel일 경우
+			books.append(Novel()) 					# novel 클래스를 이용하여 객체 생성
 	total_price = 0
-	for book in books: # books의 요소들을 순회
-		total_price += book.get_rental_price(day) # 대여비 계산 후 총합 누적
+	for book in books: 								# books의 요소들을 순회
+		total_price += book.get_rental_price(day) 	# 대여비 계산 후 총합 누적
 	return total_price
 
 
