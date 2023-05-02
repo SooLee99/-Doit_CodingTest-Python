@@ -32,6 +32,9 @@
     경품을 받기위해 앞으로 더 작성해야 하는 게시글의 개수를 return 해주세요.
 """
 
+# n = 3 => 1000
+# n = 2 => 100
+# res => 1 -> 10 -> 100 -> 1000 ...
 def func_a(n):
     ret = 1
     while n > 0:
@@ -39,7 +42,9 @@ def func_a(n):
         n -= 1
     return ret
 
-
+# n   => 367, 36, 3, 0
+# ret =>   0,  1, 2, 3
+# n의 자릿수를 반환하는 함수
 def func_b(n):
     ret = 0
     while n > 0:
@@ -47,7 +52,9 @@ def func_b(n):
         n //= 10
     return ret
 
-
+# n   => 367, 36, 3, 0
+# ret => 0 + 7 + 6 + 3
+# n의 자릿수를 반환하는 함수
 def func_c(n):
     ret = 0
     while n > 0:
@@ -58,6 +65,7 @@ def func_c(n):
 
 def solution(num):
     next_num = num                      # 경품 당첨될 게시글 번호 추적을 위해 변수 생성
+
     while True:
         next_num += 1                   # 1. 게시글 번호 1 증가
         length = func_b(next_num)       # 게시글 번호의 자릿수를 반환
@@ -76,3 +84,12 @@ def solution(num):
             break
 
     return next_num - num               # 경품 게시글 번호 - 현재 게시물 번호 = 작성해야 할 게시글 수
+
+
+num1 = 1
+ret1 = solution(num1)
+print("solution 함수의 반환 값은", ret1, "입니다.")
+
+num2 = 235386
+ret2 = solution(num2)
+print("solution 함수의 반환 값은", ret2, "입니다.")

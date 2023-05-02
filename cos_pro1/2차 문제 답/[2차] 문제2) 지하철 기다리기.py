@@ -53,3 +53,13 @@ def solution(subway_times, current_time):
 		return -1                                   # => 다음 지하철이 없다는 뜻, 따라서 -1 반환
 
 	return answer
+
+subway_times1 = ["05:31", "11:59", "13:30", "23:32"]
+current_time1 = "12:00"
+ret1 = solution(subway_times1, current_time1)
+print("solution 함수의 반환 값은", ret1, "입니다.")
+
+subway_times2 = ["14:31", "15:31"]
+current_time2 = "15:31"
+ret2 = solution(subway_times2, current_time2)
+print("solution 함수의 반환 값은", ret2, "입니다.")
