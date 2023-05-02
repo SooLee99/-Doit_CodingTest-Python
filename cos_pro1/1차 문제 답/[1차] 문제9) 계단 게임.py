@@ -33,14 +33,19 @@ def func(record):
 
 def solution(recordA, recordB):
 	cnt = 0
-	for i in range(len(recordA)): # 기록된 게임만큼 반복
-		if recordA[i] == recordB[i]: # 낸 가위바위보가 같은 경우(무승부) 다음 반복문 실행
+	for i in range(len(recordA)): 				# 기록된 게임만큼 반복
+		if recordA[i] == recordB[i]: 			# 낸 가위바위보가 같은 경우(무승부) 다음 반복문 실행
 			continue
-		elif recordA[i] == func(recordB[i]): # recordA가 이긴 경우(승리)
-			cnt = cnt + 3 # 3점 누적
+
+		# recordA가 이긴 경우(승리)
+		elif recordA[i] == func(recordB[i]):
+			cnt = cnt + 3 		# 3점 누적
+
+		# recordA가 진 경우(패배)
 		else:
 			if cnt > 0:
-				cnt = cnt - 1 # recordA가 진 경우(패배), 1점 실점 => 단, 최소 0점 이상
+				cnt = cnt - 1 	# 1점 실점 => 단, 최소 0점 이상
+
 	return cnt
 
 

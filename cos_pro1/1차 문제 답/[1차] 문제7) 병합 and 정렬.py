@@ -31,22 +31,28 @@ def solution(arrA, arrB):
     arrB_len = len(arrB)
     answer = []
 
-    while arrA_idx < arrA_len and arrB_idx < arrB_len:  # arrA 및 arrB 중 한 배열의 크기만큼 순회
-        if arrA[arrA_idx] < arrB[arrB_idx]:  # 각 요소를 비교한 뒤 arrA가 더 작은 경우
-            answer.append(arrA[arrA_idx])  # arrA 값을 answer에 추가
-            arrA_idx += 1  # 해당 요소는 answer에 추가하였으니 다음 요소 비교를 위해 idx 값 증가
+    # 1. arrA 및 arrB 중 한 배열의 크기만큼 순회
+    while arrA_idx < arrA_len and arrB_idx < arrB_len:
+        if arrA[arrA_idx] < arrB[arrB_idx]:             # 각 요소를 비교한 뒤 arrA가 더 작은 경우
+            answer.append(arrA[arrA_idx])               # arrA 값을 answer에 추가
+            arrA_idx += 1                               # 해당 요소는 answer에 추가하였으니 다음 요소 비교를 위해 idx 값 증가
 
         else:
             answer.append(arrB[arrB_idx])  # arrB 값을 answer에 추가
             arrB_idx += 1  # 해당 요소는 answer에 추가하였으니 다음 요소 비교를 위해 idx 값 증가
 
-    while arrA_idx < arrA_len:  # 위에서 비교 후 남은 arrA 요소들을 반복
+
+    # 2. 위에서 비교 후 남은 arrA 요소들을 반복
+    while arrA_idx < arrA_len:
         answer.append(arrA[arrA_idx])  # answer에 arrA의 요소 추가
         arrA_idx += 1  # 다음 arrA의 요소를 추가하기 위해 idx 값 증가
 
-    while arrB_idx < arrB_len:  # 위에서 비교 후 남은 arrB 요소들을 반복
+
+    # 3. 위에서 비교 후 남은 arrB 요소들을 반복
+    while arrB_idx < arrB_len:
         answer.append(arrB[arrB_idx])  # answer에 arrB의 요소 추가
         arrB_idx += 1  # 다음 arrB의 요소를 추가하기 위해 idx 값 증가
+
     return answer
 
 

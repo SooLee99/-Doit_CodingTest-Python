@@ -1,6 +1,6 @@
 """
 < 문제 >
-    [1차] 문제10) 주식으로 최대 수익을 내세요
+    [1차] 문제 10) 주식으로 최대 수익을 내세요
 
 < 문제 설명 >
     지난 연속된 n일 동안의 주식 가격이 순서대로 들어있는 배열이 있습니다. 이때, 다음 규칙에 따라 주식을 사고 팔았을 때의 최대 수익을 구하려 합니다.
@@ -28,13 +28,15 @@
 
 def solution(prices):
     INF = 1000000001;
-    tmp = INF  # 1일차 가격을 최솟값으로 등록하기 위해 제일 큰 값을 선언
-    answer = -INF  # 2일차 가격 - 1일차 가격을 answer로 등록하기 위해 제일 작은 값을 선언
-    for price in prices:  # 날짜순으로 배치된 주식가격 순회
-        if tmp != INF:  # tmp, INF가 같은 경우는 최초 순회 시 => 1일차 밖에 없음
-            answer = max(answer, price - tmp)  # 첫 이익인 2일차-1일차 값을 answer에 저장
+    tmp = INF                                   # 1일차 가격을 최솟값으로 등록하기 위해 제일 큰 값을 선언
+    answer = -INF                               # 2일차 가격 - 1일차 가격을 answer로 등록하기 위해 제일 작은 값을 선언
+    for price in prices:                        # 날짜순으로 배치된 주식가격 순회
+        if tmp != INF:                          # tmp, INF가 같은 경우는 최초 순회 시 => 1일차 밖에 없음
+            answer = max(answer, price - tmp)   # 첫 이익인 2일차-1일차 값을 answer에 저장
+
         # 그 이후 순회하면서 이익이 더 큰 n일차 - n일차의 값이 저장됨.
-        tmp = min(tmp, price)  # 1일차의 값을 tmp에 저장 => answer의 진짜 초깃값을 구하기 위함
+        tmp = min(tmp, price)                   # 1일차의 값을 tmp에 저장 => answer의 진짜 초깃값을 구하기 위함
+
     # 그 이후 순회하면서 더 가격이 저렴한 n일차의 값이 저장됨.
     return answer
 

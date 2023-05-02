@@ -26,16 +26,17 @@
 """
 
 def solution(N, votes):
-	vote_counter = [0 for i in range(N+1)] # 후보들의 투표 수 리스트 생성
-	for i in votes: # 투표를 받은 후보들의 리스트를 순회
-		vote_counter[i] += 1 # 후보들의 투표 수 리스트에 누적 => [1]은 1번 후보임
+	vote_counter = [0 for i in range(N+1)] 	# 후보들의 투표 수 리스트 생성
+	for i in votes: 						# 투표를 받은 후보들의 리스트를 순회
+		vote_counter[i] += 1 				# 후보들의 투표 수 리스트에 누적 => [1]은 1번 후보임
 
-	max_val = max(vote_counter) # 제일 높은 투표 수를 반환
+	max_val = max(vote_counter)				# 제일 높은 투표 수를 반환
 
 	answer = []
-	for idx in range(1, N + 1): # 후보들의 투표 수 리스트 순회
-		if vote_counter[idx] == max_val: # 제일 높은 투표 수와 동일한 투표 수를 받은 경우
-			answer.append(idx) # answer 리스트에 추가 => 투표가 동점인 경우도 알 수 있음
+	for idx in range(1, N + 1):				# 후보들의 투표 수 리스트 순회
+		if vote_counter[idx] == max_val: 	# 제일 높은 투표 수와 동일한 투표 수를 받은 경우
+			answer.append(idx) 				# answer 리스트에 추가 => 투표가 동점인 경우도 알 수 있음
+
 	return answer
 
 
