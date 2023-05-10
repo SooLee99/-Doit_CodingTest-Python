@@ -48,7 +48,9 @@ def solution(arr):
     # 연속된 큰 요소가 발견된 경우에는 최대 누적된 값인 answer 반환
     return answer
 
-
+# temp = [0, 3, 1, 0, 2]
+# max(temp) => 3
+# answer = max(temp) + 1
 arr = [3, 1, 2, 4, 5, 1, 2, 2, 3, 4]
 ret = solution(arr)
 print("solution 함수의 반환 값은", ret, "입니다.")
